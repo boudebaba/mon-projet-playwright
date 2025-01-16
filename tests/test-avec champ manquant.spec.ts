@@ -1,0 +1,35 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.goto('https://www.campusfrance.org/fr/user/register');
+  await page.getByText('Mon adresse e-mail').click();
+  await page.getByPlaceholder('monadresse@domaine.com').click();
+  await page.getByPlaceholder('monadresse@domaine.com').fill('aszszszs@szssz');
+  await page.getByRole('textbox', { name: 'Mon mot de passe*' }).click();
+  await page.getByRole('textbox', { name: 'Mon mot de passe*' }).fill('szszsz');
+  await page.getByLabel('Confirmer le mot de passe').click();
+  await page.getByLabel('Confirmer le mot de passe').fill('zszs');
+  await page.locator('#edit-field-civilite div').filter({ hasText: 'Mme' }).click();
+  await page.getByLabel('Mme').press('s');
+  await page.getByLabel('Nom', { exact: true }).click();
+  await page.getByLabel('Nom', { exact: true }).fill('szsz');
+  await page.getByLabel('Prénom').click();
+  await page.getByLabel('Prénom').fill('zszsz');
+  await page.locator('div').filter({ hasText: /^- Choisir une valeur -$/ }).nth(1).click();
+  await page.locator('#edit-field-pays-concernes-wrapper').getByText('Afrique', { exact: true }).click();
+  await page.getByLabel('Code postal').click();
+  await page.getByLabel('Code postal').press('CapsLock');
+  await page.getByLabel('Code postal').fill('33000');
+  await page.getByLabel('Ville').click();
+  await page.getByLabel('Ville').fill('PARIS');
+  await page.getByLabel('Téléphone').click();
+  await page.getByLabel('Téléphone').fill('0909090909');
+  await page.locator('#edit-field-publics-cibles div').filter({ hasText: 'Étudiants' }).click();
+  await page.locator('#edit-field-publics-cibles').getByText('Étudiants').click();
+  await page.locator('#edit-field-domaine-etudes-wrapper').getByText('- Aucun(e) -').nth(1).click();
+  await page.getByText('Sport', { exact: true }).click();
+  await page.getByText('- Aucun(e) -').nth(2).click();
+  await page.getByText('Doctorat / PhD').click();
+  await page.getByText('J’accepte que mes données').click();
+  await expect(page.locator('#edit-actions')).toContainText('Créer un compte');
+});

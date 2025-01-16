@@ -1,0 +1,30 @@
+[
+  {
+    "nom": "Dupont",
+    "prenom": "Jean",
+    "email": "jean.dupont@example.com",
+    "password": "password123",
+    "confirmPassword": "password123",
+    "civilite": "Mr",
+    "pays": "Afrique", 
+    "codePostal": "75001",
+    "ville": "Paris",
+    "telephone": "0123456789",
+    "domaineEtudes": "Informatique",
+    "niveauEtudes": "Licence 3"
+  },
+  {
+    "nom": "Martin",
+    "prenom": "Marie",
+    "email": "marie.martin@example.com",
+    "password": "password456",
+    "confirmPassword": "password456",
+    "civilite": "Mme",
+    "pays": "Afrique",  
+    "codePostal": "75002",
+    "ville": "Paris",
+    "telephone": "0987654321",
+    "domaineEtudes": "Sport",
+    "niveauEtudes": "Licence 1"
+  }
+]
